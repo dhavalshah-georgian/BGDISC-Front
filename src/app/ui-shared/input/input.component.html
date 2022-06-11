@@ -1,0 +1,11 @@
+<div [ngClass]="className">
+    <input [ngClass]="inputClassName"
+           [attr.placeholder]="placeHolder"
+           type="text"
+           [(ngModel)]="value"
+           (input)="onInputChange()"
+           [readOnly]="readonly"
+           [disabled]="disabled"
+           [required]="required"
+    >
+  </div>

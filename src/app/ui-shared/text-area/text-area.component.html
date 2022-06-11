@@ -1,0 +1,8 @@
+<div [ngClass]="className">
+    <textarea
+      [ngClass]="textAreaClassName" [rows]="rows" [cols]="cols" [(ngModel)]="value"
+      [required]="required" [readOnly]="readonly" [disabled]="disabled" (ngModelChange)="onInputChange()"
+      style="width: 100%"
+    ></textarea>
+  </div>
+  

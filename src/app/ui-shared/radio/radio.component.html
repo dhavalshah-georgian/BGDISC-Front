@@ -1,0 +1,21 @@
+<div class="row">
+  <ng-container *ngFor="let item of data; index as i">
+    <div [ngClass]="item.className">
+      <input
+        type="radio" checked *ngIf="isChecked(item.label)"
+        [ngClass]="item.inputClassName" (click)="onCheckClick(item.label)"
+        [disabled]="disabled" [required]="required"
+      >
+      <input
+        type="radio" *ngIf="!isChecked(item.label)"
+        [ngClass]="item.inputClassName" (click)="onCheckClick(item.label)"
+        [disabled]="disabled" [required]="required"
+      >
+      <ui-label
+        class="mx-1"
+        [class]="'form-check-label'"
+        [text]="item.label"
+      ></ui-label>
+    </div>
+  </ng-container>
+</div>

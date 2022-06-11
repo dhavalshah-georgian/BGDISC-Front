@@ -1,0 +1,27 @@
+<div class="d-inline-block" ngbDropdown *ngIf="!isSplit">
+    <button class="btn dropdown-toggle-icon-none d-flex align-items-center" [ngClass]="className" id="dropdown1" ngbDropdownToggle>
+        {{ title }}
+        <i class="feather-sm d-flex ms-2" *ngIf="isDropdown" name="chevron-down"></i>
+        <i class="feather-sm d-flex ms-2" *ngIf="!isDropdown" name="chevron-up"></i>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdown1">
+        <button class="dropdown-item">Option 1</button>
+        <button class="dropdown-item">Option 2</button>
+        <button class="dropdown-item">Option 3</button>
+    </div>
+</div>
+
+<div class="btn-group me-2 mb-2 mb-md-0" *ngIf="isSplit">
+    <button type="button" class="btn" [ngClass]="className">{{ title }}</button>
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn dropdown-toggle-split dropdown-toggle-icon-none" [ngClass]="className" ngbDropdownToggle>
+            <i class="feather-sm d-flex" *ngIf="isDropdown" name="chevron-down"></i>
+            <i class="feather-sm d-flex" *ngIf="!isDropdown" name="chevron-up"></i>
+        </button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+            <button ngbDropdownItem>One</button>
+            <button ngbDropdownItem>Two</button>
+            <button ngbDropdownItem>Four!</button>
+        </div>
+    </div>
+</div>
