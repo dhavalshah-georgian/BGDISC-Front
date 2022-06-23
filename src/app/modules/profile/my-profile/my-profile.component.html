@@ -1,3 +1,107 @@
-<p> 
-    Profile works !
-</p>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <a class="nav-link waves-effect waves-dark pro-pic"
+                    href="javascript:void(0)" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="assets/images/users/user4.jpg" alt="user" class="rounded-circle" width="200" />
+                </a>
+                <h4 class="ms-2">Dhaval Shah</h4>
+                <h6>Active</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-6">
+        <div class="card">
+            <div class="card-body"> 
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Email: </h6> 
+                        <p> dhaval.shah@gmail.com </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Role: </h6> 
+                        <p> Admin </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Datasets: </h6> 
+                        <p> 0 </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Groups: </h6> 
+                        <p> 0 </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <h6> Login Since: </h6>
+                        <p> 25/05/2019 </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <h6> Desccription: </h6>
+                        <p> User is not a member of any group. </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-lg-4 col-md-3">
+        <div class="card">
+            <div class="card-body">
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Dhaval's Content</h4>
+            <h5 class="card-subtitle text-muted">Overview of the contents</h5>
+            <div class="table-responsive">
+                <table class="table align-middle text-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="text-dark font-medium fs-4">#</th>
+                            <th class="text-dark font-medium fs-4">Dataset / Group</th>
+                            <th class="text-dark font-medium fs-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor='let ts of topSelling'>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img [src]=ts.image alt="user" width="45" class="rounded-circle">
+                                    <div class="ms-3">
+                                        <h5 class="mb-0 font-medium">{{ts.uname}}</h5>
+                                        <span class="text-muted">{{ts.gmail}}</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="fs-4">{{ts.productName}}</td>
+                            <td>
+                                <span class="p-2 bg-{{ts.status}} rounded-circle d-inline-block ms-3"></span>
+                            </td>
+                            
+                            <td>
+                                <h5 class="mb-0 fw-normal">{{ts.weeks}}</h5>
+                            </td>
+                            <td>
+                                <h5 class="mb-0 fw-normal">{{ts.budget}}</h5>
+                            </td>
+                        </tr> -->
+                        <tr *ngIf="topSelling?.length === 0">
+                            <td colspan="3">No results were found. Please try another keyword.</td>
+                        </tr>              
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
