@@ -15,29 +15,33 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { RouterModule } from '@angular/router';
+import { TableSearchPipe } from './ui-shared/_core/_pipe/table-search.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SpinnerComponent,
-    FullComponent,
-    AuthLayoutComponent,
-    NavigationComponent,
-    SidebarComponent,
-  ],
-  imports: [
-    RouterModule.forRoot(AppRoutes),
+    declarations: [
+        AppComponent,
+        SpinnerComponent,
+        FullComponent,
+        AuthLayoutComponent,
+        NavigationComponent,
+        SidebarComponent,
+    ],
+    imports: [
+        RouterModule.forRoot(AppRoutes),
 
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    UiSharedModule,
-    NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        UiSharedModule,
+        NgbModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+
+    ],
+    providers: [
+        TableSearchPipe
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

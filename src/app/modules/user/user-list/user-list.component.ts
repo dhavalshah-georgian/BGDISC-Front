@@ -8,6 +8,42 @@ import { Component, OnInit } from "@angular/core";
 
 export class UserListComponent implements OnInit {
   
+    list = [
+        {
+            id: 1,
+            name: "Matthew Meade",
+            role: "Admin"
+        },
+        {
+            id: 2,
+            name: "Brad Noble",
+            role: "Site Editor"
+        },
+        {
+            id: 3,
+            name: "James McKeown",
+            role: "Content Editor"
+        }
+    ];
+    headers = [
+        {
+            key: "id",
+            text: "Id",
+            isSort: true
+        },
+        {
+            key: "name",
+            text: "Name",
+            isSort: true
+        },
+        {
+            key: "role",
+            text: "Role",
+            isSort: true
+        }
+    ];
+    searchString = "";
+
     constructor() {
     }
   

@@ -51,12 +51,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="col-lg-4 col-md-3">
-        <div class="card">
-            <div class="card-body">
-            </div>
-        </div>
-    </div> -->
 </div>
 
 <div class="row">
@@ -65,7 +59,8 @@
             <h4 class="card-title">Dhaval's Content</h4>
             <h5 class="card-subtitle text-muted">Overview of the contents</h5>
             <div class="table-responsive">
-                <table class="table align-middle text-nowrap">
+                <ui-table [masterList]="list" [headerList]="headers" [searchString]="searchString"></ui-table>
+                <!-- <table class="table align-middle text-nowrap table-bordered table-hover">
                     <thead>
                         <tr>
                             <th class="text-dark font-medium fs-4">#</th>
@@ -74,33 +69,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr *ngFor='let ts of topSelling'>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img [src]=ts.image alt="user" width="45" class="rounded-circle">
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 font-medium">{{ts.uname}}</h5>
-                                        <span class="text-muted">{{ts.gmail}}</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="fs-4">{{ts.productName}}</td>
-                            <td>
-                                <span class="p-2 bg-{{ts.status}} rounded-circle d-inline-block ms-3"></span>
-                            </td>
-                            
-                            <td>
-                                <h5 class="mb-0 fw-normal">{{ts.weeks}}</h5>
-                            </td>
-                            <td>
-                                <h5 class="mb-0 fw-normal">{{ts.budget}}</h5>
-                            </td>
-                        </tr> -->
-                        <tr *ngIf="topSelling?.length === 0">
-                            <td colspan="3">No results were found. Please try another keyword.</td>
-                        </tr>              
+                        <ng-container *ngFor="let lst of list; index as i">
+                            <tr>
+                                <td>
+                                    {{ lst?.id }}
+                                </td>
+                                <td>
+                                    {{ lst?.name }}
+                                </td>
+                                <td>
+                                    {{ lst?.isActive ? "Active" : "Not Active" }}
+                                </td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="list?.length === 0">
+                            <tr>
+                                <td colspan="3">No results were found. Please try another keyword.</td>
+                            </tr>    
+                        </ng-container>
                     </tbody>
-                </table>
+                </table> -->
             </div>
         </div>
     </div>
