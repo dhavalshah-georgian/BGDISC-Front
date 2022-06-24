@@ -9,6 +9,10 @@ import { SelectComponent } from "./select/select.component";
 import { SpanComponent } from "./span/span.component";
 import { TextAreaComponent } from "./text-area/text-area.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
+import { DtTableModule } from "ngx-dt-table";
+import { TableComponent } from "./table/table.component";
+import { TableSearchPipe } from "./_core/_pipe/table-search.pipe";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
     declarations: [
@@ -18,12 +22,16 @@ import { CheckboxComponent } from "./checkbox/checkbox.component";
         TextAreaComponent,
         SelectComponent,
         CheckboxComponent,
-        RadioComponent
+        RadioComponent,
+        TableComponent,
+        TableSearchPipe
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        DtTableModule,
+        NgbModule
     ],
     providers: [],
     exports: [
@@ -33,7 +41,9 @@ import { CheckboxComponent } from "./checkbox/checkbox.component";
         TextAreaComponent,
         SelectComponent,
         CheckboxComponent,
-        RadioComponent
+        RadioComponent,
+        TableComponent,
+        TableSearchPipe
     ]
 })
 export class UiSharedModule {

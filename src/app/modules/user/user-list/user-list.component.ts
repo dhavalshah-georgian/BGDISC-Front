@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-my-profile',
-  templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.scss']
+    selector: 'app-user-list',
+    templateUrl: './user-list.component.html',
+    styleUrls: ['./user-list.component.scss']
 })
-export class MyProfileComponent implements OnInit {
 
+export class UserListComponent implements OnInit {
+  
     list = [
         {
             id: 1,
-            name: "Group 1",
-            isActive: true
+            name: "Matthew Meade",
+            role: "Admin"
         },
         {
             id: 2,
-            name: "BGDISC group",
-            isActive: true
+            name: "Brad Noble",
+            role: "Site Editor"
         },
         {
             id: 3,
-            name: "Bruce Group",
-            isActive: false
+            name: "James McKeown",
+            role: "Content Editor"
         }
     ];
     headers = [
@@ -36,8 +37,8 @@ export class MyProfileComponent implements OnInit {
             isSort: true
         },
         {
-            key: "isActive",
-            text: "Active",
+            key: "role",
+            text: "Role",
             isSort: true
         }
     ];
@@ -45,8 +46,7 @@ export class MyProfileComponent implements OnInit {
 
     constructor() {
     }
-
+  
     ngOnInit(): void {
-      
     }
 }

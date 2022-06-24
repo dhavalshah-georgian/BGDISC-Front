@@ -1,3 +1,95 @@
-<p> 
-    Profile works !
-</p>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <a class="nav-link waves-effect waves-dark pro-pic"
+                    href="javascript:void(0)" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="assets/images/users/user4.jpg" alt="user" class="rounded-circle" width="200" />
+                </a>
+                <h4 class="ms-2">Dhaval Shah</h4>
+                <h6>Active</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-6">
+        <div class="card">
+            <div class="card-body"> 
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Email: </h6> 
+                        <p> dhaval.shah@gmail.com </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Role: </h6> 
+                        <p> Admin </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Datasets: </h6> 
+                        <p> 0 </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <h6> Groups: </h6> 
+                        <p> 0 </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <h6> Login Since: </h6>
+                        <p> 25/05/2019 </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <h6> Desccription: </h6>
+                        <p> User is not a member of any group. </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Dhaval's Content</h4>
+            <h5 class="card-subtitle text-muted">Overview of the contents</h5>
+            <div class="table-responsive">
+                <ui-table [masterList]="list" [headerList]="headers" [searchString]="searchString"></ui-table>
+                <!-- <table class="table align-middle text-nowrap table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-dark font-medium fs-4">#</th>
+                            <th class="text-dark font-medium fs-4">Dataset / Group</th>
+                            <th class="text-dark font-medium fs-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let lst of list; index as i">
+                            <tr>
+                                <td>
+                                    {{ lst?.id }}
+                                </td>
+                                <td>
+                                    {{ lst?.name }}
+                                </td>
+                                <td>
+                                    {{ lst?.isActive ? "Active" : "Not Active" }}
+                                </td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="list?.length === 0">
+                            <tr>
+                                <td colspan="3">No results were found. Please try another keyword.</td>
+                            </tr>    
+                        </ng-container>
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+    </div>
+</div>

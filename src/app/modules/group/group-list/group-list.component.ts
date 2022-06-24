@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-my-profile',
-  templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.scss']
+    selector: 'app-group-list',
+    templateUrl: './group-list.component.html',
+    styleUrls: ['./group-list.component.scss']
 })
-export class MyProfileComponent implements OnInit {
 
+export class GroupListComponent implements OnInit {
+  
     list = [
         {
             id: 1,
@@ -42,11 +43,10 @@ export class MyProfileComponent implements OnInit {
         }
     ];
     searchString = "";
-
+    
     constructor() {
     }
-
+  
     ngOnInit(): void {
-      
     }
 }

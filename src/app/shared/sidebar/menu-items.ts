@@ -1,7 +1,71 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
- 
+    {
+		path: '/dashboard',
+		title: 'Dashboard',
+		icon: 'bi bi-speedometer2',
+  		class: '',
+  		extralink: false,
+  		submenu: []
+	},
+	// {
+	// 	path: '/dataset',
+	// 	title: 'Datasets',
+	// 	icon: 'bi bi-list',
+  	// 	class: '',
+  	// 	extralink: false,
+  	// 	submenu: []
+	// },
+    {
+        path: '/groups',
+        title: 'Group',
+        icon: 'bi bi-collection',
+        class: '',
+        extralink: false,
+        submenu: []
+    },
+    {
+        path: '/upload',
+        title: 'Upload',
+        icon: 'bi bi-upload',
+        class: '',
+        extralink: false,
+        submenu: [
+            // {
+            //     path: '/file-upload',
+            //     title: '',
+            //     icon: '',
+            //     class: '',
+            //     extralink: false,
+            //     submenu: []
+            // },
+            // {
+            //     path: '/file-upload',
+            //     title: '',
+            //     icon: '',
+            //     class: '',
+            //     extralink: false,
+            //     submenu: []
+            // }
+        ]
+    },
+    {
+        path: '/users',
+        title: 'Users',
+		icon: 'bi bi-people',
+  		class: '',
+  		extralink: false,
+  		submenu: []
+    },
+    {
+        path: '/profile',
+		title: 'My Profile',
+		icon: 'bi bi-person',
+  		class: '',
+  		extralink: false,
+  		submenu: []
+    }
   // {
   //   path: '/dashboard',
   //   title: 'Dashboard',
