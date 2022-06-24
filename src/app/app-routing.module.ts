@@ -20,6 +20,10 @@ export const AppRoutes: Routes = [
       {
         path: 'profile',
         loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
+      },
+      {
+        path: 'dataset',
+        loadChildren: () => import('./modules/dataset/dataset.module').then(m => m.DatasetModule)
       }
     ] 
   },
