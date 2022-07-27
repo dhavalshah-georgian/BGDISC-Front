@@ -31,6 +31,14 @@ export const AppRoutes: Routes = [
             {
                 path: 'upload',
                 loadChildren: () => import('./modules/file-upload/file-upload.module').then(m => m.FileUploadModule)
+            },
+            {
+                path: 'datasets',
+                loadChildren: () => import('./modules/dataset/dataset.module').then(m => m.DatasetModule)
+            },
+            {
+                path: 'user-roles',
+                loadChildren: () => import('./modules/setting/setting.module').then(m => m.SettingModule)
             }
         ]
     },

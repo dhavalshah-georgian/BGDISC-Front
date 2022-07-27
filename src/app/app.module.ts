@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { RouterModule } from '@angular/router';
 import { TableSearchPipe } from './ui-shared/_core/_pipe/table-search.pipe';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { TableSearchPipe } from './ui-shared/_core/_pipe/table-search.pipe';
         AuthLayoutComponent,
         NavigationComponent,
         SidebarComponent,
+
     ],
     imports: [
         RouterModule.forRoot(AppRoutes),
@@ -37,6 +39,8 @@ import { TableSearchPipe } from './ui-shared/_core/_pipe/table-search.pipe';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+
+        CoreModule
 
     ],
     providers: [

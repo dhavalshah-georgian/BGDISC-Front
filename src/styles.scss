@@ -1,2 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0A77BD;
+    border-color: #0A77BD;
+
+    &:hover {
+        color: #fff;
+        background-color: #0A77BD;
+        border-color: #0A77BD;
+        text-decoration: #0A77BD !important;
+      }
+    
+      &:focus {
+        color: #fff;
+        background-color: #0A77BD;
+        border-color: #0A77BD;
+        text-decoration: #0A77BD;
+      }
+}

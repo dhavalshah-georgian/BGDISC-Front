@@ -42,6 +42,14 @@ export class MyProfileComponent implements OnInit {
         }
     ];
     searchString = "";
+    data = [
+        {
+            id: 1,
+            name: "API"
+        }
+    ];
+
+    
 
     constructor() {
     }

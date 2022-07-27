@@ -18,7 +18,7 @@ export class SelectComponent implements OnInit {
     @Input() className = "btn-primary";
 
     @Input() isSplit = true;
-    @Input() ArrayList = [];
+    @Input() ArrayList: any = [];
 
     @Input() value = '';
     @Input() disabled = false;
