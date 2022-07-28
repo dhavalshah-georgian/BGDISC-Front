@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Datasets</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>
+                        <ui-input [value]="searchString" [placeHolder]="'Enter keyword'" (newValue)="setEmitData($event, 'search')"></ui-input>
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <p>
+                        <ui-select [title]="'Sort'" [value]="selectedSort" (selectedValue)="setEmitData($event, 'sort')" 
+                            [ArrayList]="sortSelectList" [isSplit]="isSplit"></ui-select>
+                        <ui-select [title]="'Order'" [value]="selectedOrder" (selectedValue)="setEmitData($event, 'order')" 
+                            [ArrayList]="orderSelectList" [isSplit]="isSplit"></ui-select>
+                    </p>
+                </div>
+                <div class="col-lg-1">
+                    <p>
+                        <button class="btn btn-primary mx-1" (click)="onSearchClick()"> Search </button>
+                    </p>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <ui-table [masterList]="list" [headerList]="headers" [searchString]="searchString"></ui-table>
+            </div>
+        </div>
+    </div>
+</div>

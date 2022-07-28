@@ -1,11 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class NotificationService {
 
     constructor(
-        // private toastService: ToastrService,
+        private toastService: ToastrService,
         private zone: NgZone
     ) { }
 
@@ -21,7 +21,7 @@ export class NotificationService {
             // The second parameter is the text in the button. 
             // In the third, we send in the css class for the snack bar.
             
-            //this.toastService.error(message, 'Error');
+            this.toastService.error(message);
         });
     }
 }

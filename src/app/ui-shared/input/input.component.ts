@@ -20,6 +20,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     @Input() value = '';
     @Input() label = 'Text';
     @Input() required = false;
+    @Input() type = 'text';
   
     // @Input() pattern = null;
   

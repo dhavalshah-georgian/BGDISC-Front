@@ -1,5 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ErrorHandler, NgModule, Optional, SkipSelf } from "@angular/core";
+import { ToastrModule } from "ngx-toastr";
 import { LoaderInterceptorService } from "./interceptors/loader-interceptor.service";
 import { TokenInterceptService } from "./interceptors/token.interceptor.service";
 import { ApiService } from "./services/api.service";
@@ -12,6 +13,13 @@ import { UtilityService } from "./services/utility.service";
 @NgModule({
     imports: [
         HttpClientModule,
+
+        ToastrModule.forRoot({
+            timeOut: 10000, // 10 seconds
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-right'
+        }),
     ],
     declarations: [
     ],
@@ -35,7 +43,7 @@ import { UtilityService } from "./services/utility.service";
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptService,
             multi: true
-        }
+        },
     ]
   })
   export class CoreModule {

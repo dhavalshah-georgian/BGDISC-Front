@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { UiSharedModule } from "src/app/ui-shared/ui-shared.module";
 import { AddDataComponent } from "./add-data/add-data.component";
@@ -19,7 +20,10 @@ import { DatasetRoutes } from "./dataset-routing.module";
     exports: [],
     imports: [
         RouterModule.forChild(DatasetRoutes),
-        UiSharedModule
+        UiSharedModule,
+
+        FormsModule,
+        ReactiveFormsModule,
     ],
     providers: [],
 })

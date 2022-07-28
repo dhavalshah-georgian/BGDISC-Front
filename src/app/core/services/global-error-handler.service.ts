@@ -17,7 +17,7 @@ export class GlobalErrorHandlerService implements ErrorHandler {
         let message;
         if (error instanceof HttpErrorResponse) {
             // Server error
-            console.log('server')
+            // console.log('server')
             if (error.status !== 401) {
                 // UtilityService.clearLocalStorage();
                 // router.navigate(['auth']);
@@ -28,11 +28,11 @@ export class GlobalErrorHandlerService implements ErrorHandler {
         } else {
             // Client Error
             // console.log('client')
-            // message = errorService.getClientErrorMessage(error);
-            // notifier.showError(message);
+            message = errorService.getClientErrorMessage(error);
+            notifier.showError(message);
         }
         // Always log errors
         // logger.logError(message, stackTrace);
-        console.error(error);
+        // console.error(error);
     }
 }
