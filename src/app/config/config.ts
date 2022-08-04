@@ -2,7 +2,8 @@ export const config = {
     partialUrls: {
         login: '/api/dataset/user/login',
 
-        getDatasetList: '/api/dataset/node.json'
+        getDatasetList: '/api/dataset/node.json',
+        getSingleDataset: '/api/dataset/node/id'
     },
     sortSelectList: [
         {

@@ -2,13 +2,15 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Datasets</h4>
-            <div class="d-flex justify-content-end">
-                <p>
-                    <button class="btn btn-primary mx-1"> Add Dataset </button>
-                </p>
+            <div class="row">
+                <div class="d-flex justify-content-end">
+                    <p>
+                        <button class="btn btn-primary mx-1"> Add Dataset </button>
+                    </p>
+                </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <p>
                         <ui-input [value]="searchString" [placeHolder]="'Enter keyword'" (newValue)="setEmitData($event, 'search')"></ui-input>
                     </p>
@@ -25,10 +27,13 @@
                     <p>
                         <button class="btn btn-primary mx-1" (click)="onSearchClick()"> Search </button>
                     </p>
-                </div>
+                </div> -->
             </div>
             <div class="table-responsive">
-                <ui-table [masterList]="datasetList" [headerList]="headers" [searchString]="searchString" [perPage]="10"></ui-table>
+                <ui-table 
+                    [masterList]="datasetList" [headerList]="headers" [searchString]="searchString" [perPage]="10"
+                    (rowEmit)="onRowClick($event)"
+                ></ui-table>
 
                 <ui-pagination [currantPage]="currantPage" [isLastPage]="isCurIsLast" (onPageChange)="onPageChangeEmit($event)"></ui-pagination>
             </div>

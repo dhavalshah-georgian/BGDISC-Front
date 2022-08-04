@@ -20,6 +20,19 @@ export class PaginationComponent implements OnInit {
     }
 
     onPageChangeClick(type: string) {
-        this.onPageChange.emit(type);
+        switch(type) {
+            case 'next':
+                if (!this.isLastPage) {
+                    this.onPageChange.emit(type);
+                }
+                break;
+            case 'previous':
+                if (this.currantPage > 1) {
+                    this.onPageChange.emit(type);
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

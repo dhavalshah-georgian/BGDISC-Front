@@ -83,12 +83,15 @@ export class DatasetListComponent implements OnInit {
                 this.setListData(response.body);
                 if (response.body.length === this.perPage) {
                     this.getDataSet(this.nextPage, this.perPage);
+                    this.isCurIsLast = false;
+                } else {
+                    this.isCurIsLast = true;
                 }
             } else {
-                if (response.body.length < this.perPage) {
-                    this.isCurIsLast = true;
-                } else {
+                if (response.body.length > 0) {
                     this.isCurIsLast = false;
+                } else {
+                    this.isCurIsLast = true;
                 }
             }
         });
@@ -148,5 +151,9 @@ export class DatasetListComponent implements OnInit {
             default:
                 break;
         }
+    }
+
+    onRowClick(data: DatasetList) {
+        this.router.navigate([`/datasets/${data.id}/view`]);
     }
 }

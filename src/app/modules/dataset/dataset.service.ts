@@ -22,4 +22,10 @@ export class DatasetService {
         }
         return this.api.get(config.partialUrls.getDatasetList, queryParams, httpHeaders);
     }
+
+    getSingleDataSet(id: string) {
+        let httpHeaders: HttpHeaders = new HttpHeaders();
+        httpHeaders = httpHeaders.append('Accept', 'application/json');
+        return this.api.getSingle(config.partialUrls.getSingleDataset.replace('id', id), httpHeaders);
+    }
 }

@@ -18,11 +18,11 @@ export class TableComponent implements OnInit {
     @Input() perPage: number = 10;
     @Input() currentPage: number = 1;
 
+    @Output() rowEmit = new EventEmitter();
+
     isDataLoaded = false;
 
     constructor(
-        private tableSearch: TableSearchPipe,
-        private router: Router,
     ){ }
 
     ngOnInit(): void {
@@ -32,7 +32,7 @@ export class TableComponent implements OnInit {
     }
 
     onRowClick(data: any) {
-        this.router.navigate([`/datasets/${data.id}/view`]);
+        this.rowEmit.emit(data);
     }
 
     // @Input() headerList: TableHeader[] = [];
