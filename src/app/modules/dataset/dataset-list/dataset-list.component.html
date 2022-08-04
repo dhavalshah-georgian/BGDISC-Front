@@ -23,7 +23,9 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <ui-table [masterList]="list" [headerList]="headers" [searchString]="searchString"></ui-table>
+                <ui-table [masterList]="datasetList" [headerList]="headers" [searchString]="searchString" [perPage]="10"></ui-table>
+
+                <ui-pagination [currantPage]="currantPage" [isLastPage]="isCurIsLast" (onPageChange)="onPageChangeEmit($event)"></ui-pagination>
             </div>
         </div>
     </div>

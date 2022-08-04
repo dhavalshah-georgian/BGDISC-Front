@@ -10,25 +10,28 @@ export class ApiService {
 
     public get(
         path: string,
-        queryParms: any,
+        queryParms: any = {},
+        httpHeaders: any = {},
         baseUrl: string = environment.baseURL
     ): Observable<any> {
         let httpParams: HttpParams = new HttpParams();
-        let httpHeaders: HttpHeaders = new HttpHeaders();
-        Object.keys(queryParms).forEach(key => {
-            if (key === 'headers') {
-                Object.keys(queryParms.headers).forEach(hkey => {
-                    if (queryParms.headers[hkey] !== null && queryParms.headers[hkey] !== '') {
-                        // tslint:disable-next-line: quotemark
-                        httpHeaders = httpHeaders.set(hkey, queryParms.headers[hkey]);
-                        // Accept:application/json
-                        // Content-Type: application/x-www-form-urlencoded
-                    }
-                });
-            } else {
-                httpParams = this.getQueryParams(queryParms);
-            }
-        });
+        // let httpHeaders: HttpHeaders = new HttpHeaders();
+        // Object.keys(queryParms).forEach(key => {
+        //     if (key === 'headers') {
+        //         Object.keys(queryParms.headers).forEach(hkey => {
+        //             if (queryParms.headers[hkey] !== null && queryParms.headers[hkey] !== '') {
+        //                 // tslint:disable-next-line: quotemark
+        //                 httpHeaders = httpHeaders.set(hkey, queryParms.headers[hkey]);
+        //                 // Accept:application/json
+        //                 // Content-Type: application/x-www-form-urlencoded
+        //             }
+        //         });
+        //     } else {
+        //         httpParams = this.getQueryParams(queryParms);
+        //     }
+        // });
+
+        httpParams = this.getQueryParams(queryParms);
         
         return this.http
             .get(`${baseUrl + path}`, {

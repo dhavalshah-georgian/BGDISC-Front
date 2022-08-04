@@ -15,7 +15,16 @@ export const ROUTES: RouteInfo[] = [
 		icon: 'bi bi-list',
   		class: '',
   		extralink: false,
-  		submenu: []
+  		submenu: [
+            // {
+            //     path: '/list',
+            //     title: 'List',
+            //     icon: 'bi bi-list-ul',
+            //     class: '',
+            //     extralink: false,
+            //     submenu: []
+            // }
+        ]
 	},
     {
         path: '/groups',

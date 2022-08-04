@@ -8,6 +8,8 @@ import { CreateDatasetLayoutComponent } from "./create-dataset-layout/create-dat
 import { CreateDatasetComponent } from "./create-dataset/create-dataset.component";
 import { DatasetListComponent } from "./dataset-list/dataset-list.component";
 import { DatasetRoutes } from "./dataset-routing.module";
+import { DatasetService } from "./dataset.service";
+import { ViewDatasetComponent } from "./view-dataset/view-dataset.component";
 
 @NgModule({
     declarations: [
@@ -15,7 +17,8 @@ import { DatasetRoutes } from "./dataset-routing.module";
         CreateDatasetLayoutComponent,
         CreateDatasetComponent,
         AdditionalDataComponent,
-        AddDataComponent
+        AddDataComponent,
+        ViewDatasetComponent,
     ],
     exports: [],
     imports: [
@@ -25,7 +28,9 @@ import { DatasetRoutes } from "./dataset-routing.module";
         FormsModule,
         ReactiveFormsModule,
     ],
-    providers: [],
+    providers: [
+        DatasetService
+    ],
 })
 
 export class DatasetModule { }

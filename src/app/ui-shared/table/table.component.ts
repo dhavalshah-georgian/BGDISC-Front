@@ -15,11 +15,18 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() masterList: any;
     @Input() searchString: string = '';
 
-    page: TablePage = {
-        total: 0,
-        size: 5,
-        index: 1
-    };
+    @Input() perPage: number = 10;
+    @Input() currentPage: number = 1;
+
+    isDataLoaded = false;
+
+    // page: TablePage = {
+    //     total: 0,
+    //     size: 10,
+    //     index: 1
+    // };
+
+    // dtOptions: DataTables.Settings = {}
 
     constructor(
         private tableSearch: TableSearchPipe,
@@ -27,15 +34,35 @@ export class TableComponent implements OnInit, OnChanges {
     ){ }
 
     ngOnInit(): void {
+        setTimeout(() => {
+            this.setValue();
+            this.isDataLoaded = true;
+        });
+    }
+
+    setValue() {
+        // this.page = {
+        //     total: 0,
+        //     size: this.perPage,
+        //     index: this.currentPage
+        // };
+        // this.dtOptions = {
+        //     pagingType: 'full_numbers',
+        //     pageLength: this.perPage
+        // }
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         if (this.masterList && this.masterList.length > 0) {
-            this.page = {
-                total: this.masterList.length,
-                size: 5,
-                index: 1
-            };
+            // this.dtOptions = {
+            //     pagingType: 'full_numbers',
+            //     pageLength: this.perPage
+            // }
+            // this.page = {
+            //     total: this.masterList.length,
+            //     size: this.perPage,
+            //     index: this.currentPage
+            // };
         }
     }
 

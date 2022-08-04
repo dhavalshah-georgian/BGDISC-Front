@@ -53,10 +53,9 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        let request = {
-            username: this.loginForm.value.email,
-            password: this.loginForm.value.password
-        };
+        const request = new FormData();
+        request.append("username", this.loginForm.value.email);
+        request.append("password", this.loginForm.value.password); 
         
         this.auth.login(request).subscribe((response: any) => {
             console.log(response);
