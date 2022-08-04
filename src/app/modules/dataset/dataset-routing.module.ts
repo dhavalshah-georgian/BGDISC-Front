@@ -1,9 +1,19 @@
 import { Routes } from "@angular/router";
-import { DataSetComponent } from "./dataset.component";
+import { CreateDatasetLayoutComponent } from "./create-dataset-layout/create-dataset-layout.component";
+import { DatasetListComponent } from "./dataset-list/dataset-list.component";
+import { ViewDatasetComponent } from "./view-dataset/view-dataset.component";
 
-export const DataSetRoutes: Routes = [
+export const DatasetRoutes: Routes = [
     {
-        path: 'add',
-        component: DataSetComponent
+        path: '',
+        component: DatasetListComponent
+    },
+    {
+        path: 'create',
+        component: CreateDatasetLayoutComponent
+    },
+    {
+        path: ':id/view',
+        component: ViewDatasetComponent
     }
 ]

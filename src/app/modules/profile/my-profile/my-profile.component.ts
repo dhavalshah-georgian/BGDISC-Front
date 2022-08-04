@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { config } from 'src/app/config';
 
 @Component({
   selector: 'app-my-profile',
@@ -42,6 +43,8 @@ export class MyProfileComponent implements OnInit {
         }
     ];
     searchString = "";
+    sortSelectList = config.sortSelectList;
+    orderSelectList = config.orderSelectList;
 
     constructor() {
     }

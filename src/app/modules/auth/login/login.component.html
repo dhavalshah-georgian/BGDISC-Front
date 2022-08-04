@@ -1,1 +1,33 @@
-<p> login works! </p>
+<div class="row">
+    <div class="col-lg-4 col-md-4">
+        <div class="card"></div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="assets/images/logos/bgdisc-colour-300.png">
+                <h4 class="card-title">Login </h4>
+                <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+                    <p>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Enter email"/>
+                    </p>
+                    <small *ngIf="isFormSubmit && f?.['email']?.errors">
+                        <ui-span [class]="'text-danger'" *ngIf="f?.['email']?.errors?.['required']" [text]="'Email is required'"></ui-span>
+                        <ui-span [class]="'text-danger'" *ngIf="f?.['email']?.errors?.['pattern']" [text]="'Email is invalid'"></ui-span>
+                    </small>
+                    <p>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Enter password"/>
+                    </p>
+                    <small *ngIf="isFormSubmit && f?.['password']?.errors">
+                        <ui-span [class]="'text-danger'" *ngIf="f?.['password']?.errors?.['required']" [text]="'Password is required'"></ui-span>
+                        <ui-span [class]="'text-danger'" *ngIf="f?.['password']?.errors?.['pattern']" [text]="'Password is invalid'"></ui-span>
+                    </small>
+                    <p>
+                        <button class="btn btn-primary mt-1" type="submit">Login</button>
+                    </p>
+                    <h5> Forgot Password?&nbsp;<a class="cursor-pointer text-underline" (click)="openForgotPasswordPage()">click here</a> </h5>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

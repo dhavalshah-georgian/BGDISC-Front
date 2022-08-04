@@ -1,15 +1,18 @@
-<dt-table [data]="masterList" [pageIndex]="page.index" [pageSize]="page.size">
-    <ng-container *ngFor="let header of headerList;">
-        <dt-column [field]="header.key" [header]="header.text" [sortable]="header.isSort"></dt-column>
+<table class="table-bordered">
+    <tr>
+        <ng-container *ngFor="let header of headerList;">
+            <th> {{ header.text }} </th>
+        </ng-container>
+        <th> Action </th>
+    </tr>
+    <ng-container *ngFor="let row of masterList;">
+        <tr>
+            <ng-container *ngFor="let header of headerList;">
+                <td> {{ row[header.key] }}  </td>
+            </ng-container>
+            <td>
+                <a class="btn btn-primary cursor-pointer" (click)="onRowClick(row)">View</a>
+            </td>
+        </tr>
     </ng-container>
-</dt-table>
-
-<ngb-pagination 
-    class="d-flex justify-content-end"
-    [collectionSize]="page.total"
-    [(page)]="page.index"
-    [maxSize]="5"
-    [rotate]="true"
-    [ellipses]="false"
-    [boundaryLinks]="true"
-></ngb-pagination>
+</table>

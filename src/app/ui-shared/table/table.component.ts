@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from "@angular/core";
 import { Router } from "@angular/router";
 import { TableSearchPipe } from "../_core/_pipe/table-search.pipe";
 import { TableActions, TableHeader, TablePage } from "../_model/ui-shared.models";
@@ -9,17 +9,16 @@ import { TableActions, TableHeader, TablePage } from "../_model/ui-shared.models
     styleUrls: ['./table.component.scss']
 })
 
-export class TableComponent implements OnInit, OnChanges {
+export class TableComponent implements OnInit {
 
     @Input() headerList: TableHeader[] = [];
     @Input() masterList: any;
     @Input() searchString: string = '';
 
-    page: TablePage = {
-        total: 0,
-        size: 5,
-        index: 1
-    };
+    @Input() perPage: number = 10;
+    @Input() currentPage: number = 1;
+
+    isDataLoaded = false;
 
     constructor(
         private tableSearch: TableSearchPipe,
@@ -27,16 +26,13 @@ export class TableComponent implements OnInit, OnChanges {
     ){ }
 
     ngOnInit(): void {
+        setTimeout(() => {
+            this.isDataLoaded = true;
+        });
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        if (this.masterList && this.masterList.length > 0) {
-            this.page = {
-                total: this.masterList.length,
-                size: 5,
-                index: 1
-            };
-        }
+    onRowClick(data: any) {
+        this.router.navigate([`/datasets/${data.id}/view`]);
     }
 
     // @Input() headerList: TableHeader[] = [];

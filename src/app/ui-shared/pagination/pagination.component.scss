@@ -1,0 +1,24 @@
+.pagination-table {
+    height: 40px;
+    width: 120px;
+    border-color: #686868;
+    float: right;
+}
+
+.td-disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+
+    a {
+        background-color: #d3d3d3;
+    }
+}
+
+.td-active {
+    background-color: #2962ff;
+
+    a {
+        background-color: #2962ff;
+        color: #ffffff;
+    }
+}

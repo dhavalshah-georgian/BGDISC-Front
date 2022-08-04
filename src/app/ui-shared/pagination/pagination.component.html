@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-end py-3">
+    <p>&nbsp;</p>
+    <table class="pagination-table">
+        <tbody>
+            <tr>
+                <!-- <td>
+                    <a class="page-link" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span> 
+                    </a>
+                </td> -->
+                <td [ngClass]="currantPage === 1 ? 'td-disabled' : 'cursor-pointer'" (click)="onPageChangeClick('previous')">
+                    <a class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span> 
+                    </a>
+                </td>
+                <td class="td-active">
+                    <a class="page-link"> {{ currantPage }} </a>
+                </td>
+                <td [ngClass]="isLastPage ? 'td-disabled' : 'cursor-pointer'" (click)="onPageChangeClick('next')">
+                    <a class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span> 
+                    </a>
+                </td>
+                <!-- <td>
+                    <a class="page-link" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span> 
+                    </a>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

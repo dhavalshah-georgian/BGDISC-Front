@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
@@ -18,10 +18,14 @@ export class SelectComponent implements OnInit {
     @Input() className = "btn-primary";
 
     @Input() isSplit = true;
-    @Input() ArrayList = [];
+    @Input() ArrayList: any = [];
 
     @Input() value = '';
     @Input() disabled = false;
+
+    @Output() selectedValue = new EventEmitter();
+
+    isDataLoaded = false;
 
     constructor() { }
 
@@ -56,5 +60,22 @@ export class SelectComponent implements OnInit {
     }
 
     ngOnInit() {
+        setTimeout(() => {
+            this.setValue();
+        });
+    }
+
+    setValue() {
+        const val = this.value;
+        if (val) {
+            this.value = val;
+        }
+        console.log(this.value);
+        this.isDataLoaded = true;
+    }
+
+    onDropdownClick(obj: any) {
+        this.value = obj;
+        this.selectedValue.emit(obj);
     }
 }

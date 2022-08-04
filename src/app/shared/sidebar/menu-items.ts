@@ -9,14 +9,23 @@ export const ROUTES: RouteInfo[] = [
   		extralink: false,
   		submenu: []
 	},
-	// {
-	// 	path: '/dataset',
-	// 	title: 'Datasets',
-	// 	icon: 'bi bi-list',
-  	// 	class: '',
-  	// 	extralink: false,
-  	// 	submenu: []
-	// },
+	{
+		path: '/datasets',
+		title: 'Datasets',
+		icon: 'bi bi-list',
+  		class: '',
+  		extralink: false,
+  		submenu: [
+            // {
+            //     path: '/list',
+            //     title: 'List',
+            //     icon: 'bi bi-list-ul',
+            //     class: '',
+            //     extralink: false,
+            //     submenu: []
+            // }
+        ]
+	},
     {
         path: '/groups',
         title: 'Group',

@@ -3,7 +3,7 @@
            [attr.placeholder]="placeHolder"
            type="text"
            [(ngModel)]="value"
-           (input)="onInputChange()"
+           (ngModelChange)="onInputChange()"
            [readOnly]="readonly"
            [disabled]="disabled"
            [required]="required"

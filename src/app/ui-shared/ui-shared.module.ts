@@ -13,6 +13,15 @@ import { DtTableModule } from "ngx-dt-table";
 import { TableComponent } from "./table/table.component";
 import { TableSearchPipe } from "./_core/_pipe/table-search.pipe";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { PaginationComponent } from "./pagination/pagination.component";
+import { RouterModule } from "@angular/router";
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
+const materialModules = [
+    MatTableModule,
+    MatSortModule
+];
 
 @NgModule({
     declarations: [
@@ -24,6 +33,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
         CheckboxComponent,
         RadioComponent,
         TableComponent,
+        PaginationComponent,
         TableSearchPipe
     ],
     imports: [
@@ -31,7 +41,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
         FormsModule,
         ReactiveFormsModule,
         DtTableModule,
-        NgbModule
+        NgbModule,
+        ...materialModules
     ],
     providers: [],
     exports: [
@@ -43,6 +54,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
         CheckboxComponent,
         RadioComponent,
         TableComponent,
+        PaginationComponent,
         TableSearchPipe
     ]
 })
