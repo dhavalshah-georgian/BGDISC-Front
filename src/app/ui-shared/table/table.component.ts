@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from "@angular/core";
 import { Router } from "@angular/router";
 import { TableSearchPipe } from "../_core/_pipe/table-search.pipe";
 import { TableActions, TableHeader, TablePage } from "../_model/ui-shared.models";
@@ -9,7 +9,7 @@ import { TableActions, TableHeader, TablePage } from "../_model/ui-shared.models
     styleUrls: ['./table.component.scss']
 })
 
-export class TableComponent implements OnInit, OnChanges {
+export class TableComponent implements OnInit {
 
     @Input() headerList: TableHeader[] = [];
     @Input() masterList: any;
@@ -20,14 +20,6 @@ export class TableComponent implements OnInit, OnChanges {
 
     isDataLoaded = false;
 
-    // page: TablePage = {
-    //     total: 0,
-    //     size: 10,
-    //     index: 1
-    // };
-
-    // dtOptions: DataTables.Settings = {}
-
     constructor(
         private tableSearch: TableSearchPipe,
         private router: Router,
@@ -35,35 +27,12 @@ export class TableComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         setTimeout(() => {
-            this.setValue();
             this.isDataLoaded = true;
         });
     }
 
-    setValue() {
-        // this.page = {
-        //     total: 0,
-        //     size: this.perPage,
-        //     index: this.currentPage
-        // };
-        // this.dtOptions = {
-        //     pagingType: 'full_numbers',
-        //     pageLength: this.perPage
-        // }
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        if (this.masterList && this.masterList.length > 0) {
-            // this.dtOptions = {
-            //     pagingType: 'full_numbers',
-            //     pageLength: this.perPage
-            // }
-            // this.page = {
-            //     total: this.masterList.length,
-            //     size: this.perPage,
-            //     index: this.currentPage
-            // };
-        }
+    onRowClick(data: any) {
+        this.router.navigate([`/datasets/${data.id}/view`]);
     }
 
     // @Input() headerList: TableHeader[] = [];

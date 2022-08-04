@@ -2,13 +2,18 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Datasets</h4>
+            <div class="d-flex justify-content-end">
+                <p>
+                    <button class="btn btn-primary mx-1"> Add Dataset </button>
+                </p>
+            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <p>
                         <ui-input [value]="searchString" [placeHolder]="'Enter keyword'" (newValue)="setEmitData($event, 'search')"></ui-input>
                     </p>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <p>
                         <ui-select [title]="'Sort'" [value]="selectedSort" (selectedValue)="setEmitData($event, 'sort')" 
                             [ArrayList]="sortSelectList" [isSplit]="isSplit"></ui-select>
@@ -16,7 +21,7 @@
                             [ArrayList]="orderSelectList" [isSplit]="isSplit"></ui-select>
                     </p>
                 </div>
-                <div class="col-lg-1">
+                <div class="col-lg-2 d-flex justify-content-end">
                     <p>
                         <button class="btn btn-primary mx-1" (click)="onSearchClick()"> Search </button>
                     </p>

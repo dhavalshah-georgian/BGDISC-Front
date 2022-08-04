@@ -13,7 +13,7 @@ export const DatasetRoutes: Routes = [
         component: CreateDatasetLayoutComponent
     },
     {
-        path: 'view/:id',
+        path: ':id/view',
         component: ViewDatasetComponent
     }
 ]
